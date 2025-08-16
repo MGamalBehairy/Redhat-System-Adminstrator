@@ -1,0 +1,6 @@
+/var  (variable)        =>  anyfile that will be changed by the time in dynamic way, Ex.  Log Files,  Databases,  or store the Website Content (if you run web server like apache OR nginx) 
+
+/etc        => contain Cofiguration files for this system
+
+/run        => contain Runtime data for processes started since the last boot. This includes Process ID and  Lock Files
+
