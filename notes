@@ -1,0 +1,4 @@
+$ history      => to show all history commands
+$ !!          => to use last command u have used
+$ ! + number (1..100..) to use the command from the history
+$ ctrl + r    => then type a word or patten and it will give u the command that contain this pattern from the history but in reverse way
