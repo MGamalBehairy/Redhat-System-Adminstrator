@@ -2,3 +2,13 @@ $ history      => to show all history commands
 $ !!          => to use last command u have used
 $ ! + number (1..100..) to use the command from the history
 $ ctrl + r    => then type a word or patten and it will give u the command that contain this pattern from the history but in reverse way
+
+
+ctrl + A      jump to the beginning of the line
+ctrl + E      jump to the End of the Line
+
+ctrl + u      clear from the cursor to the beginning of the command line
+ctrl + k      clear                  to the End of the Command line
+
+
+ctrl + r     search the history list of command for pattern
