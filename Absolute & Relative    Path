@@ -48,6 +48,6 @@ cp -r /etc/*  .    =>> copy all Content of /etc/             like in GUI    doub
 
 
 
-soft Link     is a shortcut or Sympolic    like shortcut in windows      very small size that point to the original file   NOT Actual Data on the Hard Disk
+soft Link     is a shortcut or Sympolic    like shortcut in windows      very small size that point to the original file (which is HARD LINK)   NOT Actual Data on the Hard Disk
 Hard Link      same as Orignal File  with same Inode  and same Size  and it points to the Actual Data on The Hard Disk
 https://prnt.sc/1PwgvvC-O0B2
