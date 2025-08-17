@@ -51,3 +51,15 @@ cp -r /etc/*  .    =>> copy all Content of /etc/             like in GUI    doub
 soft Link     is a shortcut or Sympolic    like shortcut in windows      very small size that point to the original file (which is HARD LINK)   NOT Actual Data on the Hard Disk
 Hard Link      same as Orignal File  with same Inode  and same Size  and it points to the Actual Data on The Hard Disk
 https://prnt.sc/1PwgvvC-O0B2
+
+
+To create Hard Link   use   "ln" command hard Link is the same with Orignal file and Acutal Data, same size , same Inode, same permission,   and every time you create a hard link from a file ,  this will increement by one
+$ ln /etc/passwd  hardLink-passwd.txt
+
+SOFT Link or Sympolic Link  is a shortcut Link,   the command is like Hard Link   but with adding  " -s "
+$ ln -s  /ets/passwd    softLink-passwd.txt
+
+to show the inode number
+$ ls -li                        i => for inode
+
+NOTE:  if you deleted the Original Link then the Soft Link will be Useless ,
