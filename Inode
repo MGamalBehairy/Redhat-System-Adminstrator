@@ -1,0 +1,17 @@
+Inode  => any file have an Inode
+
+so Inode   is   a { Database } Contains  Metadata of the File    , (Metadata  is Information about the file like, )
+So Inode Store everything of the file except the Actual Data and the File name
+
+
+  Inode  store:-
+1- file type
+2- Permissions
+3- Hard Links Cound
+4- Owner ID
+5- Group ID
+6- Size of file
+7- Time stamp  (access Time)      This the Time when u ACCESSED the file
+8- Time stamp  (Modification Time)                     MODIFIED on This File
+8- Soft/Hard Links
+9- Access Control List (ACLs)
