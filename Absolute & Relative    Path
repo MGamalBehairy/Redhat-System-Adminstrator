@@ -63,3 +63,39 @@ to show the inode number
 $ ls -li                        i => for inode
 
 NOTE:  if you deleted the Original Link then the Soft Link will be Useless ,
+
+Also  Hard Link Can Create Only Files not Directories,     but Soft Link can be made from Directory
+
+$ ln /etc  HardLinkDirectory            => hard link NOT Allowed
+
+$ ln -s /etc SoftLink                    => Soft Link Created Successfuly
+
+
+
+
+also  Hard Link can Not be created from  file System OR Partition   to Different Partition
+u can't make a hard link    from    /boot   to /home                        becuase these are two different Partitions
+
+but u can make Soft Link From partiton to Different Partion
+
+
+
+Summary
+Soft Link            => is an Alias to the Original File  similar to the shortcut in Windows
+Hard Link            => is the EXACT Replica of the Original file 
+
+Soft Link            => it just Contain the Location to the Original file but NOT the Actal Data
+Hard Link            => It Contains the  Actual Content of the File
+
+Soft Link            => have Different Inode Values 
+Hard Link            => have SAME Inode Values,  Same Size, Same Permissions,   Same  Time Stamp (Access / Modification)
+
+Soft Link            => the Link becomes Inaccessible when the original file is removed
+Hard Link            => Changes in the Hard Linked File will reflect in the other Files
+
+Soft Link            =>  can Be created Every where across filesystem in different partitions,  also can be created from Directories
+Hard Link            => Links Can NOT be created in Different Partitions for Ex.  /dev /home ...    also can't create Directory
+
+Soft Link            => Can Link both to a File or a DIRECTORY
+Hard Link            => Hard Links can Only link to a File   ,  NOT a Directory
+
