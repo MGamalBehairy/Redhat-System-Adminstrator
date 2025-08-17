@@ -1,0 +1,56 @@
+grep   => get the word or pattern you are looking for from the file     and give you the line which this word exist
+
+EX.
+
+$grep mohamed /etc/passwd
+
+
+NOTE;   grep   is Case Sensitive by Default
+
+$ grep ROOT /etc/passwd      => ROOT Doesn't Exist
+
+so to ignore case sensitive => use   -i   
+
+$ grep -i  ROOT  /etc/passwd
+
+
+-v option   =>  get All lines  that Dones't contain the pattern u give      ,   so its like the opposite of the grep
+Ex.
+$ grep -v nologin  /etc/passwd
+
+
+-A 1..9..  (A => After)    => display the pattern  and "number"  of lines After it
+$ grep -A 2 root  /etc/passwd
+=>>> it will give u the line that contain "root" and also 2 lines after this line
+
+
+-B 1..9  (B ==> Before)  => display number of lines before the line that contain the pattern
+
+$ grep -B 2 root  /etc/passwd
+
+
+
+
+
+-r    => recursive    => search for the pattern in all sub-directories and sub-files
+هيدور علي الكلمة اللي انت عايزها  في كل الملفات والفولدرات  في المسار اللي انت مدهوله
+
+
+-e    => search for PATTERN1 OR  Pattern2
+
+$ grep -e  mohamed  -e  root  /etc/passwd          // search for  "mohamed" OR  "root"   in /etc/passwd
+Another way
+$ grep "mohamed|root"  /etc/passwd
+
+
+
+^    => any word starts with the pattern after "^"
+Ex.
+grep ^cat  /usr/share/dict/words
+      output  =>> catupa  , catra,....     all words start with "cat"
+
+$  => any words ENDS  with the pattern Before "$"
+Ex.
+grep cat$  /usr/share/dict/words
+    output  =>> natcat,  pascat ...   all words ends with "cat"
+
