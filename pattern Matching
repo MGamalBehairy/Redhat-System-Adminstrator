@@ -1,0 +1,25 @@
+*  => means Any
+ls f*    => display any file that srart with "f" with any characters
+
+ls ????    =>> display any file that contain 4 characters,  "?" means only one single character
+
+ls file?  => display any file that is 5 charachter and start with "file" and any charater   like  file1,  file3 ..... 
+
+display "OR"
+Ex.   Display any file that start with "f" OR "a" character
+$ ls [fa]*
+
+display "Range"
+$ ls [a-c]*    => display any file start with a or b  or  c
+
+display   All Except ...
+$ ls [!fa]*    => display any file that start with any character EXCEPT 'f' and 'a' characters
+
+display   ALL files Except Range of characters
+$ ls [^a-c]*    => display any file start with any character  EXCEPT "a" or "b" or "c"
+
+
+
+$ ls *[[:space]]*        => display any file start with any character and contain "SPace"  and also End with any character
+
+$ ls file[[:alnum:]]  => alnum (alpha numerical)  charachters or Numbers    => this mean display all files start with "file" word and end with characters or Numbers
