@@ -1,0 +1,53 @@
+Absolute path      => is the full Path from root Directory ( / )
+
+Relative Path      =>  the path from the current Path you on,   not need to write the full path   just from ur current path
+
+
+
+
+
+
+
+            LS Command 
+
+ls  -l   for long list   and show more details about each file and directory
+    -a   to show all files including hidden files
+    -lh   to show the size of files and directories in human readable format
+    -t   to list files and directories  with respect to time    (the newest file will be above and the latest one will be at the bottom)
+    -rt  to list the files with respect to TIME but in REVERSE ORDER  the Newest file will be at the Bottom   and the Latest file will be at the Top
+    -lR  to show all files and Directories RECURSIVE all Sub-Directories and Sub-Files
+
+
+
+
+
+      mkdir
+
+to create directory and aprent directory that not exist too
+like create    dir1/dir2/dir3          none of them is exist
+mkdir    dir1/dir2/dir3        =>> Error, No such file or Directory
+mkdir -p dir1/dir2/dir3        =>> dir1 , dir2, dir3 have been created
+
+
+
+        cp
+
+cp /etc/passwd  .          =>> ( . ) means  current path
+
+cp -r /etc  .        ==>> u must insert  -r  incase copy a Directory
+
+cp -r /etc/*  .    =>> copy all Content of /etc/             like in GUI    double click on etc folder ,   then press ctrl + A     and copy
+
+
+
+
+
+
+
+
+
+
+
+soft Link     is a shortcut or Sympolic    like shortcut in windows      very small size that point to the original file   NOT Actual Data on the Hard Disk
+Hard Link      same as Orignal File  with same Inode  and same Size  and it points to the Actual Data on The Hard Disk
+https://prnt.sc/1PwgvvC-O0B2
