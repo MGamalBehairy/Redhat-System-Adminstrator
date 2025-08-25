@@ -1,0 +1,19 @@
+/boot    => kernel + GRUP (Boot files),    if you delete the gup, the system will work until you restart it
+
+/etc    => Configuration Files
+
+/home    => Users Directory
+
+/root    => root directory
+
+/bin    => contains Comands for Normal users
+
+/sbin    => contain Admin Commands
+
+/proc    => Contain all Runinng processes ID  
+
+
+
+
+
+Kernel  => 
