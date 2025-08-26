@@ -1,0 +1,5 @@
+adduser ali -u 4500 --shell /usr/bin/bash -md /var/ali -G adm      => Create "user"=> Ali , with "ID" => 4500   with,  "shell" => "Python"  , add him to "Group" => adm 
+
+
+
+useradd    => will create the user but will NOT create home directory for the user
