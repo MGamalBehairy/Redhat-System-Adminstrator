@@ -1,0 +1,21 @@
+useradd
+useldel  -r        =>  -r to delete the home directory and everythong of the user
+
+groupadd
+groupdel
+
+
+
+Groups are in     /etc/sudoers/
+
+                vim/etc/sudoers
+
+$id user    => to check the id and groups of the user thta joined
+
+
+admin/sudo    Group  in Ubuntu      & " wheel "  in Redhat
+
+
+$ usermod      =>  to modify the user    (change the name, ID, Groups, )
+
+$ sudo usermod mohamed -aG admin        (add/append user mohamed to "admin/sudo" Group)
