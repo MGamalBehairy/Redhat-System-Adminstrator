@@ -1,0 +1,26 @@
+Windows: each App has one Single Process
+
+Linux: Every app has multiple PID (Process ID)
+       Ex,  Firefox app  can be used in browsing, Donwloading, Uploading, Stream
+            and if the Download Tap corrupted, then you can kill the process that specified for the Downloading 
+
+
+Kernel: Responsible for Hardware Management
+        to Execute Process or Not.
+
+
+
+
+Processes:-
+
+in Linux every app contain multiple PID and PPID (Parent Process ID)
+
+                                                PPID
+                                                  |
+                                            PID 1    PID2
+
+PPID : Generate/Terminate Child PID
+       Assign Resources for the PID so the Child PID can do the task
+
+
+pstree =>> Process List as a Tree
