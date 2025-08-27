@@ -1,0 +1,23 @@
+tar   -cvf  fileName  SourceFile          (Note:  -f  must come in last option,  -f  refer to  file name,     -cfv   X    Incorrect)
+
+1-  Archive
+    -c v f          fileName (wirh Red Color)
+
+2- gzip
+    -c z f          filename.gz
+
+3- gzip2
+    -cv j f         fileName.bz
+
+4- xz
+    -cv J f        fileName.xz
+
+
+
+DeCompress
+  - Replace "c" with "x" for Extraxt            , c => Compress  , x => Extract
+
+    Ex.
+       J            .xz
+tar -xvjf backup.tar.biz2  --directory=/home
+       z            .gzip
