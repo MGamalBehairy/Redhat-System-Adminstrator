@@ -1,0 +1,27 @@
+Managing Services
+Systemd / init : First Service that are strating after the Kernel
+
+systemd (for ew Systems)    ,  init (for old systems)
+
+
+
+Systemd  =>  use  command "systemctl"    +    action    +    serviceName            ,      systemctl  start/enable/mask    cron        ,    systemctl  list-dependinces  cron    (List childs or dependencies needed to run this service)
+
+init     =>               "service"       +  serviceName  +  action                 ,      service  cron  start
+                                                                                           chkconfig  ssh  on/off  (enable/disable)
+
+
+to know if the system use "systemd OR init"  use => " pstree " command 
+
+
+
+
+Benefits of "systemd" compare to "init"
+
+systemd: Resource Management and Limitation for Resources per user   so  we Must use it in Docker & K8S    ,      user x can only use 2 Gb of ram  and 10GB of hard disk
+init   :  give Unlimited resources for the users (No Limitations)
+
+systemd : can start/stop/modify Multiple Services at the same time
+init    : can only start one service per time (one-by-one)
+
+
