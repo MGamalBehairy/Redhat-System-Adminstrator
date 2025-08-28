@@ -1,0 +1,5 @@
+Processes:-  when you launch an App,  it Converts to Processes.
+
+to list all running processes
+$ ls proc
+
