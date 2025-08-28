@@ -1,0 +1,46 @@
+Processes:-  when you launch an App,  it Converts to Processes.
+
+to list all running processes
+$ ls proc
+
+to List PID
+
+if you know the PID and want to know whose use this PID (want to know the application o Service)
+1- PID ➡️ ,  app ❌   
+$ top -p PID    =>  top -p 1548
+
+2- app ➡️ ,  PID ❌
+$ pgrep app/service  => pgrep  firefox                   => Just  Print the "Parent PID"   (Lowest PID)
+$ pidof app/service                                      => List All processes Related to this app/service
+
+3- PID ❌ ,  app ❌
+$ pstree -p    (-p  to print the PID)  pstree will just list the processes as a tree but without  printing the PID
+$ ps  -aux
+$ top
+
+
+The "State" Of Broken process will be "R"  and use high Resources
+
+
+------------------------------ Signals  -----------------------------
+
+$ man 7 signal        
+
+1-   1  => Reload / Reread 
+
+2-   9  => force Terminate
+
+3-   15 =>  Clean Terminate
+
+----------------------------------   Stop Process  -------------------------------
+$ kill     -singal  PID          => kill -9  1519
+
+$ pkill   -signal  PID           => pkill  -15  fire        (pkill  =>  kill pattern,  if you type  "fire" then will  terminate    firewall,  firefox,  firezilla ....)
+
+$ killall -signal  FullAppName   => killall -9 firefox        (killall will Close the Firefox app not just the broken or unwanted process and will terminate it for  all  Users if you r Admin) 
+
+
+
+
+
+Multiuser    =>  the System Contain Multi Account/Users ,   and Many Users can Login at the same Time 
