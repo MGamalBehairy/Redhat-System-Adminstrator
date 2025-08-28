@@ -1,1 +1,11 @@
 Network Config
+
+
+Net Mask for VM always:  24
+
+NAT:  Virtual Network Editor, and set the IP for te VM  in the Subnet of NAT
+
+
+NAT: creatre Virtual S.W (subnet 2) and will be diiferenct subnet from Router (subnet1)
+
+Gateway in NAT. last Digit always "2"    Ex. subnet :  192.168.2.0  then the Gateway will be "192.168.2.2"
