@@ -1,0 +1,29 @@
+NetworkManager Service:-
+  provide 2 tools:
+
+  1-  nmtui  (Text User Interface)
+  2-  cli    (Command Line Interface)
+
+
+
+$ nmcli connection  moidfy  "profile Name"  ipv4.method  manual  ipv4.address  192.168.2.60/24  ipv4.gateway 192.168.2.2  ipv4.dns 8.8.8.8  connection.autoconnect  yes 
+
+
+
+
+Located  in       /etc/NetworkManager/system-connection    (Upuntu)            /etc/sysconfig/network-scripts/  (Redhat)
+to open it
+$  vim  /etc/NetworkManager/system-connection
+
+add network 
+$nmcli connection add type ehternet ifname "deviceName  Ex,  ens33"  con-name  "profileName  Ex,  ens33"  
+ 
+Modify
+$ nmcli connection modify "profileName  Ex, ens33"  ipv4.method  manual  ipv4.address  192.168.2.80/24  ipv4.gateway 192.168.2.2  ipv4.dns  8.8.8.8  connection.autoconnect  yes
+
+$ nmcli connection down  ens33
+$ nmcli connection up  ens33
+--------------------------------------  set hostname  --------------------------------------
+$ hostnamectl set-hostname   Mohamed-VM
+
+
