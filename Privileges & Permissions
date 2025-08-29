@@ -1,0 +1,15 @@
+-----------------------------------  Privileges  ------------------------------------------
+vim  /etc/sudoers/
+
+mohamed    ALL=(SERVICES)  All
+ali        All=(Applications)  All
+
+%group  All=(ALL)  All
+
+
+
+
+Note:  we add percentage %  for  Groups   Not Users
+
+-----------------------------------  Permissions  ------------------------------------------
+
