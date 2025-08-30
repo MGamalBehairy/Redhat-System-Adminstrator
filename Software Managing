@@ -1,0 +1,9 @@
+1- If you have the Source and ust Install it
+
+  rpm  (Redhat)      ,      dpkg  (Debian)
+
+
+2- Download the Source and Dependencies from Repos
+
+  dnf  (Redhat)      ,      apt  (Ubuntu)
+
