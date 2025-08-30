@@ -1,0 +1,31 @@
+1- If you have the Source and ust Install it
+
+  rpm  (Redhat)      ,      dpkg  (Debian)            // dpkg or rpm   are NOT install the DEPENDENCIES 
+$ sudo dpkg -i    /path/of/source/file
+$ sudo rpm  -ivh  /path/of/source/file      (vh =>  for interactive, to see what is happening)
+
+2- Download the Source and Dependencies from Repos
+
+  dnf  (Redhat)      ,      apt  (Ubuntu)        //  you can install the app or service  from the internet  or even  if you have the source file  u can install it using "apt"    and will also install the Dependencies
+
+
+
+if you want to download using CLI  use "wget"  command
+copy the link 
+$  wget  https://downloadfile
+
+
+
+
+
+
+Repos Located in Linux:-
+
+Redhat         =>  /etc/yum.repos.d/file.repo
+Ubuntu/Debian  =>  /etc/apt/sources.list
+
+The Arch  of  Linux    =>  use command "arch"  or "hostnamectl"
+"x"    => means  64 bit
+"i"    =>        32 
+
+
