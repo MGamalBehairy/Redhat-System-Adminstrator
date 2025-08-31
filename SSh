@@ -1,0 +1,94 @@
+SSH:- Secure Shell   for Remote Login
+
+
+there are Pair of Keys :-    
+  1- Public  Key (Encryption)
+  2- Private Key (Decryption)
+
+
+
+لو الكلاينت عايز يبعت داتا للسيرفر
+الكلاينت هياخد ال "ببليك كيي" بتاع السيرفر
+وهيشفر الداتا بالببليك كيي " بتاع السيرفر
+ويبعتها للسيرفر ، بعدين السيرفر هيفك التشفير بالبرايفت كيي بتاعه
+
+
+ملحوظة :   البرايفت  كيي  محدش يقدر  ياخده
+
+
+
+
+
+--------------------------------------  SSH  ------------------------------------------
+
+sshd    => Redhat
+ssh     => ubuntu
+
+the Package name "openssh-server"
+
+work on port:  22/tcp
+
+      Layer  " 7 "
+
+
+
+--------------------------------  How To Secure SSH  ---------------------------------
+1- change Port Number
+2- Change Private and Public key every 3 months 
+3- Add "PassPhrase"  => it's like a secret key to add Higher Level Of Security
+4- Disable " root " user  fro Logging through SSH
+5- Enable Public Key Login
+6- Disable Password Login
+
+
+--------------------------------- Hashing & Encryption  ------------------------------------------------
+
+sw  => use the Hashing
+SSH  => use Encryption
+
+Hashing:-  (One Way, can't restore the Original Data) زي الخلاط
+Encryption : can Decrypt it  (I have the Key or the Algorithm  to Decrypt it)
+
+
+
+---------------------------------------- Generate Public Key  --------------------------------------------
+
+$ ssh-keygen    (generate Public & private Keys      with Algorithm  " rsa ")
+" Now you can get the "FingerPrint"  and paste it to another Machine to Login it remotly  through the Public key
+
+----------------------------------------  How to Login Remotly via "SSH"  ------------------------------------
+
+$ ssh  username@IP_Address -p "portNumber"
+$ ssh root@192.168.2.80 -p 22    (if the port number is the Default "22",  then you can Not type it, but if you changed it , you must type it )
+
+
+=====> Change Port Number oF SShH
+$ vim /etc/ssh/sshd_config
+and simply you will be ble to change the port number
+also "PermitRootLogin  no"
+pubKeyAuthentication  yes
+PasswordAuthentication  no
+
+
+======> to apply the Changes
+from the Terminal
+$ setenforce 0
+$ systemctl stop firewalld
+$ systemctl restart ssh  (or sshd in Redhat)
+
+
+=====>  To know The Open Conncecions on me               اشوف مين اللي عامل لوج ان   عندي
+$ netstat   OR  ss
+$ netstat -antup    (a all connections,   n  numerical ,  t   tcp ,    u  udp,  p  Process Id)
+=======>  to kill/Terminate  Open Sessions,   kill it using Signals and close the session with the PID
+$ kill -9 PID (PID of open session)
+
+=======>  refuse " root " login
+$ vim /etc/ssh/sshd_config
+PermitRootLogin  no
+OR
+DenyUsers  root
+
+========> to Login Automatically Without asking for Password
+$ ssh-copy-id  gamal@IP_Address  -p "PortNumber"      (if you face an Error like "Many arguments"  then  make the port number 22  and remove  -p "portNumber" from the Command) Ex.   $ ssh-copy-id UserName@Ip_Address  $ ssh-copy-id gamal@192.168.2.103
+
