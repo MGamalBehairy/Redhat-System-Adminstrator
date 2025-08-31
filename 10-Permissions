@@ -1,0 +1,43 @@
+Permissions:
+[1] Access :- 3 Types
+
+          1- Read    (Just read the File  with number "4")
+          2- Write   (Read and "Edit" on the File      =>  "2" = w )
+          3- eXecute (Execute the Files (Executable) OR  "Access the Directory"    => "1" = x )
+          4- Full Acess (Read + Write + eXutable   "rwx"   =>  "7")
+
+[ 2 ]  Users:-
+          1- owner       (The User Who created the File      =>   "U")
+          2- Group       (you can add the Group that can access the File and set the permssion for it    =>  "G")
+          3- Others      (Not the Owner and Not from the Group that has access to the file    =>  "O")
+
+تقدر  تقول  ان  كل  فايل علي السيستم بيبقي  ليه  3 بوابات   ،  بوابة المالك  "اونر" وال "جروب"  وبوابة الآخرين "ازرس" وكل واحد بيخش من البوابة المخصصة ليه
+
+         u+
+$ chmod  g-rw  file/Directory
+         o
+
+
+to show the Permssions  use command  "ls -l"      you will find   10  characters,    first character  for the file type (file "-"  OR  directory "d")
+and the other 9 characters for the permssions
+$ chmod u+x file1
+
+$ chmod ugo+x  file2    =  chmod  +x  file2          (if you didn't specify "owner or group or other"  then it will add (except the write permssion for others) or remove for all)
+
+=====> change permssions using nnumbers
+NOTE:  u must  Enter the Permssion for (owner, Group, and Others)   if you will insert the permssions using numbers
+$ chmod 746 file1      (set for the owner "Read, Write, Execute"   and the Group "Read",   and Others  "Read (4), Write (2)" )          u must  Enter the Permssions for user,  group, and others
+
+$ chmod 754 file3    (owner "read, write, execute" ,   Group "Read, Execute"  ,  Others "Read" )
+
+
+Very Important:
+if you just set  2 digits Ex.   chmod  76  file1
+it will be like                        "076"              becuase it must be  3 digits,  and Linux will try to save the number as it  "Seventy six"    so it will add "0" at th beginning
+
+
+-----------------------------------------------  change Owner/Group  -------------------------------------
+$ sudo chown  mohamed  file1        // change owner
+
+$ sudo chgrp  devopsGroup  file2    //  ~ ~   Group
+
