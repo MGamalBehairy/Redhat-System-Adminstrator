@@ -1,0 +1,8 @@
+Shell Script:-  
+        1- Create file.sh
+        2- add/edit (coding/script)
+        3- Save
+        4- add Permission "x"
+        5- Execute/Run Script  
+                  1) ./scriptName.sh  (Current Script Location)
+                  2) w
