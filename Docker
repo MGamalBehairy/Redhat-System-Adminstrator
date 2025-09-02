@@ -1,1 +1,18 @@
-Docker
+Docker:  is the Next  Revolution of Virtualization
+
+         we Put "Container LAyer (Engine) over the O.S,  to provide containers
+
+
+Containers functions is the same of Containers that are used in Travelling or tradding
+it provides:-
+  1- Isolation  (Not mixing between other Products or Items "Software Application or Services)
+  2- Save Resources (save place for other Items  تقدر تحط كذا دور فوق بعض ووفرت مكان)
+  3- Portability 
+
+
+ٍso Containers are: Isolated Environment that Provides the need of running the App (All Dependencies, Libraries, binary files,  Configuration)
+                   ,  so you have  ONE OS  and run multiple Applications "Maybe Same Apps" on it,  without any conflicts,      and the Kernel is Shared among the Containers
+
+There are 2 Editions of Docker
+1-  Docker CE (Comunity Edition)
+2-  Docker EE (Enterprise Edition)
