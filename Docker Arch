@@ -1,0 +1,15 @@
+1- Docker root Dir:    /var/lib/docker        ==>> the place where Containers are Running
+
+registry:  the place where "RESTORE the Images"
+        1)  Publuic  (Online)
+        2)  Private  (Online OR LOCAL)
+
+
+Image:  is the Template OR The Source Of the app with its Dependencies,          the Image is Compressed and Read-Only
+
+Engine:  the service that Provide Container Layer,   and enable me to create Containers  & Manage Containers (Run/Stop)
+
+  
+Container:  Running App inside Isolated Environment with Dependencies
+
+client OR cli (cli prefer to  Client OR Command Line Interface):  it provide the Tools or Commands to be able to talk o the Engine  (Start/Stop/Create....)
