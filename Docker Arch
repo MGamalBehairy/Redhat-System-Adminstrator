@@ -3,7 +3,7 @@
 registry:  the place where "RESTORE the Images"
         1)  Publuic  (Online)
         2)  Private  (Online OR LOCAL)
-
+Docker Hub:  Public Docker Registry
 
 Image:  is the Template OR The Source Of the app with its Dependencies,          the Image is Compressed and Read-Only
 
