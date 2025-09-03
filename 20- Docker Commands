@@ -1,0 +1,24 @@
+docker    search  httpd    (to search in the docker hub  for  "httpd)
+          rmi      imageName  (to Remove Image)
+          rm       Container  (to remove Container)
+          pull     image      (to download immage from the docker hub)
+          push     image      (to upload image to docker hub)
+
+docker    images          (to list all Images u have)
+
+docker run -d --restart always --name "ContainerName" "imageName"      =>  docker run -d --restart always --name lab1 httpd                    (-d => to run the Container in the Background NOT Foregournd,  --restart always    =>  to Always run the container even after restart the service docker or restart the PC )
+docker  ps            (to list Running Containers)
+docker ps -a        (to list all Containers  "running OR Stopped")
+
+docker rm "containerName"                    => docker rm lab1
+docker rmi "ImageName"                       => docker rmi httpd 
+
+NOTE: " You Can't Remove or Delete "Running Container"
+
+-------------------          enter Container OR Excute Command inside the Container          --------------------------------
+docker exec -ti  "ContainerName"                   =>( -ti,  t => tty,  i  => interactive  if there is output will be printed in the terminal)
+docker exec -ti  lab1    ls / --color        "Run Command inside the Container"
+docker exec -ti lab1 bash                    "Enter he Container"
+
+==> to exit from Container,   $ exit
+
