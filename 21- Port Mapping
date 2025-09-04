@@ -1,0 +1,35 @@
+Port MApping:- to make the User/Client access the Container, through the IP:PORT  of  NIC  of  Server
+
+
+
+Network Drivers:
+  1- Bridge              =>  Containers CAN      go outside the Host,            and Containers  Can Communicate with each other
+  2- Host                =>  Containers Can NOT go Outside the Host,             ~ ~        ~ ~        ~ ~            ~ ~
+  3- Null/None           => Just Locally
+  4- mac vlan            => make every Container as an Isolated Physical Machine,  the Containers will see itelf as a physical machine not just Container,  also the Clients
+
+
+  docker network  --help
+  docker network prune                              => "Remove unused Networks"
+                 inspect  "ContainerName"
+                 rm                                 =>  "Remove Network"
+                 connect                            =>  "Connect a Container to Network"
+                 create                             =>  " Create Network"
+                 inspect                            =>    "Display detailed information about network"
+
+
+===> Create Network:-
+$ docker network create "net1" --driver bridge --subnet 10.0.0.0/24  --gateway 10.0.0.1
+
+$ docker network inspect net1
+==> assign Container to Ceratn NETOWRK
+$ docker run -d --restart always --name lab2 --network  net1  httpd
+
+==> Disconnect Container From Netowrk
+$ docker network disconnect net1 lab2
+==> to Connect to Network
+$ docker network connect net1 lab2
+
+$ docker netwro inspect net1        => "in the output, u will see "lab2" is attached to "net1"  " 
+Note:   the Image name must be come at the END of the COMMAND  "docker run --name httpd"
+
