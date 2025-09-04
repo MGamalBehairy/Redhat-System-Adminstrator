@@ -1,4 +1,4 @@
-Port MApping:- to make the User/Client access the Container, through the IP:PORT  of  NIC  of  Server
+ Port MApping:- to make the User/Client access the Container, through the IP:PORT  of  NIC  of  Server
 
 
 
@@ -33,3 +33,9 @@ $ docker network connect net1 lab2
 $ docker netwro inspect net1        => "in the output, u will see "lab2" is attached to "net1"  " 
 Note:   the Image name must be come at the END of the COMMAND  "docker run --name httpd"
 
+
+-----------------------------------------------  Port Mapping  ----------------------------------------
+$  -p  90:80        (90 on host,    80 for Containers)
+
+$ docker run -d --restart always --name lab2  --network net1  -p 90:80  httpd                   (the output  =>   0.0.0.0:90->80    "0.0.0.0  means  any Request comming for any NIC ")
+                                                              -p 192.168.1.77:90:80 httpd      (now you specified the IP of the HOST )
