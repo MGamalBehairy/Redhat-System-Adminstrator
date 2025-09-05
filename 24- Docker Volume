@@ -1,0 +1,17 @@
+Container is An Isolated Environment with " Service  &  DATA "
+
+and the Data in the Container is "EPHEMERAL"
+when delete the container, the data on it also removed
+so here we need the "docker Volume"  هنا ظهرت الحاجة الي docker volume
+- also the data of container is "ONLY Accessable" when Container is Running
+
+
+
+
+MicroServices  Concept  :-    the app devided into mullitple Services,  and every Service assign for isolated Container,    but All containers  can communicate with each other, and share data between them
+
+
+
+Summary:  
+Volume is Central Location OR External Storage outside the Container  ,  and we needed this becuase the Data of Containers were EPHEMERAL ,  only accessable if the container running ,  and if the containers removed , the data will also removed.
+                                    and the Container will go to the Volume to access or get Data,  so now the Containers will hold the Service NOT Data  
