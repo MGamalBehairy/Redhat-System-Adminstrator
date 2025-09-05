@@ -1,0 +1,42 @@
+Docker file can be created from:-
+1) Base Image
+2) Ready Image
+
+the name of the Docker file  must be like this =>  "Dockerfile" OR "Containerfile"
+
+first line the Dockerfile   must be "FROM"
+$ vim Dockerfile
+FROM "imageName"
+
+LABEL    ==>  Description of the Image "Metadata"
+WORKDIR  ==>  The default Location of container when exec/enter the container, 
+
+RUN  ==>    Execute the CMD Inside the Image                                                                                                                                                                                                                                                          "Used with Create Users, Files, Modify Permissions"
+CMD  ==>    same exactly like RUN BUT,  just set instruction inside the imageto do something when create a container,   but will execute  when  run container  from this image  (fr example if u said in the image to create file,  the file will not be created until u create a container)          "Used With Services, Open Port"
+
+COPY  ==>
+ADD   ==>  Copy Files from Host (src Host) to Dest (dest image)                         ,    "" RUN  ~/home/mohamed/index.html  /usr/local/apache2/htdocs  "" 
+
+ENV   ==>  Allows you to set environmetal Variable inside ur Custom Image before Build  ,    "" ENV  VAR1=DevOps_Course  VAR2=Mohamed ""
+
+EXPOSE  ==>  Open Port  when Create Container        ,                                       "" EXPOSE  80/tcp ""
+
+the image is "read only" so how can you configure or edit on it ?
+
+the docker file  will run container in the background,  and apply the changes on this container,    then will take an image from that container,    then will remove the container 
+and if there is an Error in the Dokerfile  and 3 instructions executed successfuly and 4th instruction failed,   and correct step 4 and try to commit again,    the first 3 instructions  will skip "NOT Execute again"  and just begin from step 4 (which is failed)
+
+======>  Create an image from Container
+$ docker commit "ContainerName"  "NewCustomImage:TAG"
+$ docker commit lab7  customImage:v1
+
+
+=====>    Create iamge from Dockerfile    (Dockerization)
+$  docker build        OR    docker image build
+$  docker build -t New_Cutome_httpd:v2  .              "dot because Dockerfile is in the same working directory OR Replace DOT (.)  with the full path to Dockerfile   with using -f"  -f /usr/local/Dockerfile
+Summary:
+Dockerfile  is a set of instruction  u  apply on image (اقل او اكتر من احتياجاتك) to customize the image,    Dockerfile will run container in the background to apply changes then will make an image from this container,  then will remove this container
+
+Every Step OR Every Instruction in Dockerfile  => every step = New Layer        (and run Container then get image from this container, then destroy this container,   then move to step 2 ,  and run container ffrom image that created from Step 1 and run container from it   and so on ...)
+
+The Dockerfile should be Correct "All Lines or All file,  if there is only error => it will break and when fix the error it will procced and skip te layers that are done"a
