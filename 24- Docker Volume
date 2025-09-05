@@ -8,9 +8,21 @@ so here we need the "docker Volume"  هنا ظهرت الحاجة الي docker 
 
 
 
+Container  is  two things :
+    1)  Process (Service/ App)
+    2)  Data
+so Who is More Important ?!!
+The Service is based from Image,  and the Image is already exist, so if the service "down or deleted"  we can create a new container again from the image
+But if we lost the Data, we will never get it again.
+
+
+
+
+
+
 MicroServices  Concept  :-    the app devided into mullitple Services,  and every Service assign for isolated Container,    but All containers  can communicate with each other, and share data between them
 
-
+VDO:-  Technology Deny Repeating Data
 
 Summary:  
 Volume is Central Location OR External Storage outside the Container  ,  and we needed this becuase the Data of Containers were EPHEMERAL ,  only accessable if the container running ,  and if the containers removed , the data will also removed.
