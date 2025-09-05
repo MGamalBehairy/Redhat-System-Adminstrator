@@ -24,6 +24,50 @@ MicroServices  Concept  :-    the app devided into mullitple Services,  and ever
 
 VDO:-  Technology Deny Repeating Data
 
+
+
+
+Steps to Create Docker Volume:-
+1]    Initialize hard disk    (Stand Alone Disk  OR    Multiple Disk )
+    1-    Stand Alone Disk
+        1)    Initialize Partition (/ OR /home  OR     /boot)
+        2)    File System    (NTFS, fat32, ext4        "Responsible for Storing Data in the Hard Disk")
+        3)    mount
+
+    2-    Multiple Disks        using (LVM)
+        1)    multiple disks will connected  and will be as a Physical Volume        (1 Disk = 1 Physical Volume)
+        2)    all these Pysical Volume will connect together and form  one Volume Group    (6 or 100 physical Volumes = 1 Volume Group)
+        3)    Volume Group will be Logical Volume
+        4)    File System    (NTFS, ext4)
+        5)    Mount
+https://prnt.sc/jgBqZ3Fav_Rs
+
+---------------------------------------------------------------    Lab    -----------------------------------------------------------------
+
+=======> Create New Partition
+$ lsblk        (to list the Hard Disk that Exist)
+
+$ sudo fdisk /dev/sdb            (fdisk    => to Enter the Disk    ,    sdb  is the new disk that u want to use)
+
+output    =>    a new DOS Created        (DOS is MBR OR GPT)
+
+command (m for help):    p                (p  =>    for Print info)
+
+command (m for help):    n                (n    =>  for New Partition)
+
+first sector    (2048)    "from 0 to 2047 is aloocated for MBR"
+last sector                 +10G        OR   press Enter to allocate all size to this partion
+
+command (m for help):    w                (w    =>    write and quit)
+# To make sure the partition is created successfuly
+$    lsblk                "u will see hard disk  sdb has a new partition"
+===>    to set file system to the Partition
+$ sudo mkfs -t ext4 /dev/sdb1
+
+=====> Mount the Partition to Directory to be Accessable
+$ mount /dev/sdb1    /data
+
+$ df -h        "and will see the partion is mounted,    also this command used to see the free space of hard disk "
 Summary:  
 Volume is Central Location OR External Storage outside the Container  ,  and we needed this becuase the Data of Containers were EPHEMERAL ,  only accessable if the container running ,  and if the containers removed , the data will also removed.
                                     and the Container will go to the Volume to access or get Data,  so now the Containers will hold the Service NOT Data  
