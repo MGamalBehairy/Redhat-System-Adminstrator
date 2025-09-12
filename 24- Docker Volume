@@ -71,3 +71,28 @@ $ df -h        "and will see the partion is mounted,    also this command used t
 Summary:  
 Volume is Central Location OR External Storage outside the Container  ,  and we needed this becuase the Data of Containers were EPHEMERAL ,  only accessable if the container running ,  and if the containers removed , the data will also removed.
                                     and the Container will go to the Volume to access or get Data,  so now the Containers will hold the Service NOT Data  
+
+
+
+==========================================================================================================================================================================================
+
+2]    Add Multiple Disks (LVM2)
+
+$ sudo apt install lvm2
+$ lsblk        =>  to show all disks
+
+$ sudo pvcreate  /dev/sdc  /dev/sdd        (pv    => Phyiscal Volume)    ,    make sdc & sdd  disks Physical Volume
+$ sudo vgcreate pool1  /dev/sdc  /dev/sdd   => (vgcreate    => Volume Group "Pool",    pool1, is the PoolName)
+
+$ sudo  vgs    (to list Volume Groups exist in System)
+
+$ sudo lvcreate -n db1  -l  100%  pool1    (create Logical Volume "Partition")    -n to set name  ,  db1 => the name of Logical Volume,        -l  70%  is the size u want to take from the Pool    
+OR
+$ sudo lvcreate -n db1  -L  30G   pool1       (-L "Capital"  to set size in Gigabyte)
+
+$ sudo chmod 777 /pool1-db1    (to make the Container Read and Write in this Pool)
+
+$ sudo mount /dev/pool1/db1    /var/lib/docker/volume        (the Default path is /var/lib/docker/volume  and this is non-presistent,  so mount it  to  presistent path)
+
+$ docker run -d --name webapp-volume -p 95:80 --mount 'type=bind,src=pool1-db1,dst=/usr/local/apache2' httpd       (src = where u want to save data,  dst => the location of the service in container)
+
