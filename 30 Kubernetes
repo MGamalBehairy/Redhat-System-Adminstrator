@@ -10,8 +10,6 @@ Kubernetes provides   "Auto Scalling" ,   while docker just provide  Manual Scal
 
 
 
-
-
 =====>  K8S  Arch OR Components
 
 K8S  create Cluster
@@ -22,10 +20,26 @@ Cluster   Contain
 
 
 
-1-  API-Server:  Responsible for Managing All Cluster  (Accept the Request from the User)
+1-  API-Server:  Responsible for Managing All Cluster  (Accept the Request from the Admin  "Requests means  Create or Actions on Pods")
 2-  etcd:        is the Service reponsible for     Storing Info of the Cluster + Running Nodes
 3-  kube-scheduler: tell the api-server     which best  node   to make the Pod run in it,   and  api-server will distripute the Pods  to the Nodes
 4-  kubler      :    is the Engine/Service  Responsible  for  Running the Pods   in the nodes      (kublet exist on both => nodes & Master)
 
 
  Request send  =>  api-server  will accept the request  => api-server will go to "etcd" to know which are running nodes  => api-server will go to "kube-scheduler" to know which best node will hold or run the Pod  =>  then api-server will go to the "kublet" of the node to run the pod  =>  then api-server will go back to etcd to tell it   that the pod  work on node x  "because if the failuer happen on that node,  the etcd will tell api-server which Pods were running on that node"    =>  then  api-server will go back to the  "kube-scheduler"  to tell it  the Available resources now on that node  after the pod run on it
+
+5- kube-proxy: the service that responsible for Networking between Pods,   to make Pods able to communicate to each other
+
+6- Pod =>  Pod is the smallest unit in the Infrastructure,  the Object that Containers will run in it,  it prepare the Environment to Containers to run in it
+
+7- Replicaset:- Responsible to  Monitor Number of Pods  and Create Replicas of Pods
+
+8- Deployment =>  responisble for   "AutoScalling" pods
+                 Apply any changes to the running Pods (Ex. change Port nnumber)
+
+9- Service    =>  Manage the Requests to the Pods (Distribute the Requests of user between Pods)
+                  1) Load Balance  (distribute equally between pods)
+                  2) Cluster IP
+                  3) Node Port
+
+10- Ingress  =>   It's Like "DNS"  provide for Every IP:Port = URL
