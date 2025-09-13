@@ -1,1 +1,47 @@
 Docker Copose : is a tool Produced by Docker File written in "Yaml" Language,   to  Manage More than One Container at the same time Related to the Same App  , also  & Manage Volumes & Netowrks
+              to Link 2 Related Containers together
+
+first u need to name it :" docker-compose.yml"
+
+$ vim docker-compose.yml
+
+version: "3"
+services:
+  app-db:            (container 1)
+  container_name: app-db
+  image: mariadb
+  ports:
+    -  "3306:3306"
+  restart: always
+  environment: 
+    -  MARIADB_ROOT_PASSWORD=123
+    -  MARIADB_USER=
+    -  MARIADB_PASSWORD=123
+    -  MARIADB_DATABASE=
+  networks:
+    -  app_net                                    (it's not exist, so we need to create it)
+
+networks:                      (To create Netowrks)
+  -  app_net
+    driver:  bridge
+
+  web_app:                      (container 2)
+    container_name: web_app
+    restart: always
+    image: wordpress
+    ports:
+      - "8080:80"
+    environmet:
+    -  WORDPRESS_DB_HOST=app_db         (cocntainer 1)
+    depends_on: app_db                          (don't run until  app_dp is running first)
+
+
+
+$ docker compose up      (look for file called "docker-compose.yml"   and execute all instructions on it)
+
+
+
+
+
+# Docker compose   implement  the "Micro-services" consept,   many containers work together and connected to each other,   depends_on    tell container not running until the other contaier  running first
+
