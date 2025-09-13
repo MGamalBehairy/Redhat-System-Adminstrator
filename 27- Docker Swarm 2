@@ -1,0 +1,33 @@
+1- Connect all VMs together
+
+$ sudo vm /etc/hosts        ==> Resolve "Convert the name of host to IP"
+
+$ docker swarm --help  (we will find that "Swarm" is Exist but Not Active)
+
+==> Activate sarm and initialize "Cluster Pool"
+$ docker swarm init --help
+
+$ docker swarm init --advertise-addr 
+
+$ docker swarm init --advertise-addr  ens33
+
+# You will see that he is telling "to join a node to cluster run the following command ,  and if you want to join manager to cluster run the following command"
+
+$ docker swarm join-token manager
+
+$ docker swarm join  --token  ..................... (the command that he gave u)
+
+===>  To list All Nodes in the Cluster  (The Workers OR Managers)
+$ docker node ls
+
+===> To create "Container" Using Swarm
+Old way  => $ docker run -d --restart always --name test1 -p 90:80 -- network net1 -v type=volume httpd
+New Way  => $ docker service create -d --name containerSwarm    --replicas 3   httpd                                ==>  "Note: We can Set number Of Replicas"
+
+$ docker ps       => output,  containerSwarm.3    => "3" is tht number of Replicas
+
+===>  scale umber of Replicas for Container
+$ docker service scale "Container Name"=5
+
+===> List Info of Container
+$ docker service ps "containerName"
