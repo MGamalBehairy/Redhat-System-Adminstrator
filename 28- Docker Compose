@@ -40,8 +40,9 @@ networks:                      (To create Netowrks)
 $ docker compose up      (look for file called "docker-compose.yml"   and execute all instructions on it)
 
 
-
-
-
 # Docker compose   implement  the "Micro-services" consept,   many containers work together and connected to each other,   depends_on    tell container not running until the other contaier  running first
+
+Docker compose   used  to Manage More than one container At the same Time
+
+
 
