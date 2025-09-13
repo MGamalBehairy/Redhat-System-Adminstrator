@@ -1,0 +1,13 @@
+Orchestration tool for Docker
+it make "High Availabilty",   Multiple Hosts 
+
+===> it create Cluster Pool,    and add multiple hosts in it 
+
+The Hosts become DeCenterailzed,  if a Host go down,  then the containers on it will move  to another Host
+
+Docker Swar, Components:-
+  1- Manager:  Create/ Mange Cluster Pool  (Add resources)  ,    Cluster Pool is the Total Resources of  "Workers" NOT "Managers" 
+  2- Worker:   Host running Containers
+
+Managers:- At Least there must be "2" Managers,  Cuz if there was only "1" manage,  then it will be centerlized and swarm will have no meaning here, cuz if this manager "down" then all workers and containers will be down
+           number of Managers should be "Odd",   "Up" managers Should not = "Down" Managers      ,  it should  be "up" > "down"
