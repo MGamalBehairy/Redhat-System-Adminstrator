@@ -1,0 +1,31 @@
+Kubernetes is used in Large Business,  
+
+it's better than Docker
+
+Kubernetes provides   "Auto Scalling" ,   while docker just provide  Manual Scale
+
+
+
+===> So Kubernetes is an Orcestration tool    to  Manage  the Containers  (create/down  Containers  ,    AutoScalling  ,    Monitor  ,  LoadBalancing) 
+
+
+
+
+
+=====>  K8S  Arch OR Components
+
+K8S  create Cluster
+
+Cluster   Contain    
+1-Control plane OR Master  (Manager in Swarm)
+2- nodes                   (Worker)
+
+
+
+1-  API-Server:  Responsible for Managing All Cluster  (Accept the Request from the User)
+2-  etcd:        is the Service reponsible for     Storing Info of the Cluster + Running Nodes
+3-  kube-scheduler: tell the api-server     which best  node   to make the Pod run in it,   and  api-server will distripute the Pods  to the Nodes
+4-  kubler      :    is the Engine/Service  Responsible  for  Running the Pods   in the nodes      (kublet exist on both => nodes & Master)
+
+
+ Request send  =>  api-server  will accept the request  => api-server will go to "etcd" to know which are running nodes  => api-server will go to "kube-scheduler" to know which best node will hold or run the Pod  =>  then api-server will go to the "kublet" of the node to run the pod  =>  then api-server will go back to etcd to tell it   that the pod  work on node x  "because if the failuer happen on that node,  the etcd will tell api-server which Pods were running on that node"    =>  then  api-server will go back to the  "kube-scheduler"  to tell it  the Available resources now on that node  after the pod run on it
