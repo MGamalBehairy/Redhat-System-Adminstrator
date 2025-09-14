@@ -1,0 +1,29 @@
+$ minikube kubectl --get pods -A      => (to make sure K8S "minikub" is installed properly)
+
+
+sudo vim /etc/profile
+
+  alias kubectl='minikube kubectl -- ' 
+
+
+
+  ===> In Docker
+  $ docker run -d --name "ContainerName" "ImageName"
+
+  ===> In K8S
+  $ kubectl run "PodName"  --image="ImageName"        ==> (NOTE:  In K8S , No need to type -d or  --name)
+
+  $ kubectl run --help
+
+  $ kubectl run pod1 --image=httpd
+
+
+$ kubectl run lab2 --image=httpd  -o  yaml    --dry-run=client
+
+$ vim pod.yaml
+$ kubectl apply -f pod.yaml
+
+
+  namespace = cluster
+
+  Replicaset  just keep the number of running pod,    if there was pod down,  then "replicaset" will tell "Deployment"  to run new pod
